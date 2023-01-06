@@ -1,6 +1,5 @@
 package com.onion.api1.strings.ex3;
 
-import java.util.Scanner;
 
 public class Ex3main {
 
