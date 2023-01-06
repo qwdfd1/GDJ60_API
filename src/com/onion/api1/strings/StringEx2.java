@@ -12,15 +12,22 @@ public class StringEx2 {
 		System.out.println("파일명을 입력해주세요");
 		System.out.println("FileName  : ");
 		String fileName = sc.next();
+		boolean  flag = true;
 		
+		//확장자 분리
+		String result = fileName.substring(fileName.lastIndexOf('.')+1);
+		
+		//확장자 이미지타입인지 검사
 		for(int i=0; i<names.length; i++) {
-			if(fileName.lastIndexOf(names[i]) != -1) {
-				System.out.println("확인했습니다");
+			if(result.equals(names[i])) {
+				System.out.println("정상 파일입니다");
+				flag = !flag;
 				break;
 			}
-			else {
-				System.out.println("잘못된 파일형식입니다.");
-			}
+		}
+		
+		if(flag) {
+			System.out.println("비정상 파일입니다.");
 		}
 		
 	}
