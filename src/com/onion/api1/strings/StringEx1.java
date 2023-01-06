@@ -4,10 +4,11 @@ public class StringEx1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		// 문자열에서 '='들의 인덱스 찾기
 		String phone = "010-1234-5678";
 		boolean check = true;
 
-		int [] ar = new int[phone.length()];
 		int idx = 0;
 		
 		while(check) {

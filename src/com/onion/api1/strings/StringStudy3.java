@@ -3,6 +3,8 @@ package com.onion.api1.strings;
 public class StringStudy3 {
 	public static void main(String[] args) {
 		
+		//같은 패키지 또는 java.lang패키지는 임포트 하지않고도 사용 가능
+		Object obj = new Object();
 		// String은 불변
 		// 1,2는 상수구역에서 찾으면서 같으면 같은 주소값을 준다. 그래서 true
 		// 3,4는 new키워드로 객체생성, 주소값을 비교한다. 그래서 false
