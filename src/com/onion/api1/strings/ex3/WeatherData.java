@@ -18,7 +18,7 @@ public class WeatherData {
 		WeatherDTO [] wdtos = new WeatherDTO[weathers.length/4];
 		for(int i=0; i<wdtos.length; i++) {
 			WeatherDTO wdto = new WeatherDTO();
-			wdto.setCity(weathers[i*4]);
+			wdto.setCity(weathers[i*4].toUpperCase());
 			wdto.setGion(weathers[i*4+1]);
 			wdto.setStatus(weathers[i*4+2]);
 			wdto.setDust(weathers[i*4+3]);
@@ -27,7 +27,7 @@ public class WeatherData {
 		
 		return wdtos;
 
-		
-		
 	}
+	
+	
 }
