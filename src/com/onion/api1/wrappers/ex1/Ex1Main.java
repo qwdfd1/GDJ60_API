@@ -14,8 +14,8 @@ public class Ex1Main {
 		System.out.println("주민번호 13자리를 입력해주세요 : ");
 		
 		String jumin = sc.next();
-//		int gender = jc.check1(jumin);
-//		jc.check2(jumin, gender);
+		int gender = jc.check1(jumin);
+		jc.check2(jumin, gender);
 		jc2.check(jumin);
 		
 		
