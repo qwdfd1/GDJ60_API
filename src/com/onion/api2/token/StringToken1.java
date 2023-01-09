@@ -18,6 +18,7 @@ public class StringToken1 {
 		}
 		
 		StringTokenizer st = new StringTokenizer(nations,",");
+		
 		while(st.hasMoreTokens()) {
 			NationDTO nationDTO = new NationDTO();
 			
