@@ -38,13 +38,13 @@ public class WeatherInput {
 		String city = sc.next();
 		
 		System.out.println("도시의 기온 : ");
-		String gion = sc.next();
+		int gion = sc.nextInt();
 		
 		System.out.println("도시의 날씨 : ");
 		String status = sc.next();
 		
 		System.out.println("도시의 미세먼지량 ㅣ ");
-		String dust = sc.next();
+		int dust = sc.nextInt();
 		
 		// 날씨정보가 담을 도시객체 생성
 		WeatherDTO addWeatherDto = new WeatherDTO();

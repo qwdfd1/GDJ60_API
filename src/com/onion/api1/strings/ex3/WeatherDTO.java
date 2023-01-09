@@ -3,9 +3,9 @@ package com.onion.api1.strings.ex3;
 public class WeatherDTO {
 	
 	private String city;
-	private String gion;
+	private int gion;
 	private String status;
-	private String dust;
+	private int dust;
 	
 	public String getCity() {
 		return city;
@@ -13,10 +13,10 @@ public class WeatherDTO {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public String getGion() {
+	public int getGion() {
 		return gion;
 	}
-	public void setGion(String gion) {
+	public void setGion(int gion) {
 		this.gion = gion;
 	}
 	public String getStatus() {
@@ -25,11 +25,12 @@ public class WeatherDTO {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getDust() {
+	public int getDust() {
 		return dust;
 	}
-	public void setDust(String dust) {
+	public void setDust(int dust) {
 		this.dust = dust;
 	}
 	
+
 }
