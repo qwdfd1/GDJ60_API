@@ -16,10 +16,9 @@ public class Wrapper2 {
 		//Auto-UnBoxing
 		//Reference -> Primitive 
 		//num = num2.intValue();
+		
 		num = num2;
-		
-		
-		
+
 		
 	}
 }

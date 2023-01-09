@@ -68,9 +68,7 @@ public class JuminCheck2 {
 			System.out.println("정상적이지 않은 주민번호입니다");
 		}
 		
-		
-		
-		
+			
 	}
 	
 	
