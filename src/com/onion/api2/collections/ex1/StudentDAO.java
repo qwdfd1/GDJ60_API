@@ -70,9 +70,10 @@ public class StudentDAO {
 		System.out.println("조회할 학생 이름 입력 : ");
 		String name = sc.next();
 		
-		for(int i=0; i<studentDTOs.size(); i++) {
-			if(studentDTOs.get(i).getName().equals(name)) {
-				return studentDTOs.get(i);
+		
+		for (StudentDTO studentDTO : studentDTOs) {
+			if(studentDTO.getName().equals(name)) {
+				return studentDTO;
 			}
 		}
 		return null;
@@ -118,9 +119,11 @@ public class StudentDAO {
 		String name = sc.next();
 		boolean flag = false;
 		
-		for(int i=0; i<studentDTOs.size(); i++) {
-			if(name.equals(studentDTOs.get(i).getName())) {
-				studentDTOs.remove(i);
+
+		
+		for (StudentDTO studentDTO : studentDTOs) {
+			if(name.equals(studentDTO.getName())) {
+				studentDTOs.remove(studentDTO);
 				flag = true;
 				System.out.println("학생정보가 삭제되었습니다");
 			}
