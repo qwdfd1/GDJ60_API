@@ -11,7 +11,11 @@ public class StudentController {
 	//4. 학생정보 추가
 	//5. 학생정보삭제(이름)
 	//6. 프로그램 종료
+	
+
 	Scanner sc;
+	
+	//의존성
 	StudentDAO studentDAO;
 	ArrayList<StudentDTO> studentDTOs;
 	ViewStudent viewStudent;
@@ -21,6 +25,8 @@ public class StudentController {
 	public StudentController()
 	{
 		sc = new Scanner(System.in);
+		
+		//의존성 주입
 		studentDAO = new StudentDAO();
 		studentDTOs = null;
 		viewStudent = new ViewStudent();
@@ -52,9 +58,14 @@ public class StudentController {
 			else if(select == 3) {
 				System.out.println("학생정보 조회");
 				System.out.println("학생이름\t학생번호\t국어\t영어\t수학\t총점\t평균");
-				StudentDTO studentDTO = new StudentDTO();
-				studentDTO = studentDAO.search(studentDTOs);
-				viewStudent.viewOneStudent(studentDTO);
+				StudentDTO studentDTO = studentDAO.search(studentDTOs);
+				if(studentDTO != null) {
+					viewStudent.viewOneStudent(studentDTO);					
+				}
+				else {
+					viewStudent.view("찾는학생이 없습니다");
+				}
+				
 			}
 			
 			// 학생정보 추가

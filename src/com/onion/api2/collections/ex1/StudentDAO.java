@@ -120,12 +120,10 @@ public class StudentDAO {
 		boolean flag = false;
 		
 
-		
-		for (StudentDTO studentDTO : studentDTOs) {
-			if(name.equals(studentDTO.getName())) {
-				studentDTOs.remove(studentDTO);
+		for(int i=0; i<studentDTOs.size(); i++) {
+			if(studentDTOs.get(i).getName().equals(name)) {
+				studentDTOs.remove(i);
 				flag = true;
-				System.out.println("학생정보가 삭제되었습니다");
 			}
 		}
 		
