@@ -78,7 +78,7 @@ public class StudentDAO {
 		return null;
 	}
 	
-	public ArrayList<StudentDTO> add(ArrayList<StudentDTO> studentDTOs) {
+	public void add(ArrayList<StudentDTO> studentDTOs) {
 		
 		System.out.println("학생이름 입력 : ");
 		String name = sc.next();
@@ -111,12 +111,9 @@ public class StudentDAO {
 		studentDTOs.add(studentDTO);
 		
 		
-		
-		return studentDTOs;
-		
 	}
 	
-	public ArrayList<StudentDTO> remove(ArrayList<StudentDTO> studentDTOs) {
+	public void remove(ArrayList<StudentDTO> studentDTOs) {
 		System.out.println("삭제할 학생이름 입력 : ");
 		String name = sc.next();
 		boolean flag = false;
@@ -133,8 +130,6 @@ public class StudentDAO {
 			System.out.println("학생정보가 없습니다");
 		}
 		
-
-		return studentDTOs;
 	}
 	
 
