@@ -24,7 +24,8 @@ public class FileMain1 {
 		String [] files = file.list();
 		for (String name : files) {
 			System.out.println(name);
-			File f = new File(file, name);	//절대 경로
+			File f = new File("C:\\", name);	//절대 경로(root)
+//			File f = new File(file, name);	//new File(parent경로, child경로) 사용 가능
 			System.out.println(f.isDirectory());
 		}
 		
