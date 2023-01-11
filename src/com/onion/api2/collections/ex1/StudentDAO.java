@@ -1,14 +1,22 @@
 package com.onion.api2.collections.ex1;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class StudentDAO {
 	private StringBuffer sb;
 	private Scanner sc;
+	private final long now;
+	private Calendar calendar;
 
 	public StudentDAO() {
+		calendar = Calendar.getInstance();
+		now = calendar.getTimeInMillis();
 		sc = new Scanner(System.in);
 		this.sb = new StringBuffer();
 		
@@ -16,6 +24,29 @@ public class StudentDAO {
 		sb.append("winter-2-86-84-75-");
 		sb.append("suji, 3, 89, 74, 87 ");
 		sb.append("choa, 4, 71, 25, 99 ");
+	}
+	
+	public void saveStudent(ArrayList<StudentDTO> studentDTOs) {
+		Calendar calendar = Calendar.getInstance();
+		long now = calendar.getTimeInMillis();
+		
+		for(int i=0; i<studentDTOs.size(); i++) {
+			StudentDTO studentDTO = studentDTOs.get(i);
+			String str = studentDTO.getName() + "-" + studentDTO.getNum() + "-"  + studentDTO.getKor()
+			 + "-" + studentDTO.getEng() + "-"  + studentDTO.getMath() + "\r\n";
+			File file = new File("C:\\fileTest", now+".txt");
+			try {
+				FileWriter fw = new FileWriter(file, true);
+				fw.write(str);
+				fw.flush();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
 	}
 	
 	public ArrayList<StudentDTO> init() {

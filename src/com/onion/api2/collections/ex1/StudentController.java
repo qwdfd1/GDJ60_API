@@ -39,7 +39,7 @@ public class StudentController {
 		while(run) {
 			System.out.println("메뉴를 선택해주세요");
 			System.out.println("1. 학생정보 초기화 2. 학생정보 전체조회 3. 학생정보 검색조회(이름)");
-			System.out.println("4. 학생정보 추가 5. 학생정보 삭제(이름) 6. 프로그램 종료");
+			System.out.println("4. 학생정보 추가 5. 학생정보 삭제(이름) 6. 학생정보 백업 7. 프로그램 종료");
 			int select = sc.nextInt();
 			
 			// 학생정보 초기화
@@ -80,8 +80,13 @@ public class StudentController {
 				studentDAO.remove(studentDTOs);
 			}
 			
-			// 프로그램 종료
+			// 학생정보 백업
+			// 현재시간을 밀리세컨즈로 해서 파일 작성
 			else if(select == 6) {
+				studentDAO.saveStudent(studentDTOs);
+			}
+			// 프로그램 종료
+			else if(select == 7) {
 				System.out.println("프로그램 종료");
 				run = false;
 			}
