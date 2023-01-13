@@ -72,7 +72,7 @@ public class StudentDAO {
 	public ArrayList<StudentDTO> init() {
 	
 
-		
+		//최근 수정한 백업데이터파일로 초기화 작업
 		//1. 읽어올 파일의 부모디렉토리 경로
 		File parent = new File("C:\\fileTest");
 		

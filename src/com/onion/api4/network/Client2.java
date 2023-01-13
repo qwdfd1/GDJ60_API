@@ -32,13 +32,12 @@ public class Client2 {
 		
 		
 		try {
-			socket = new Socket("192.168.1.84", 8282);
+			socket = new Socket("localhost", 8282);
 			System.out.println("Server와 접속 성공");
 			System.out.println("점심메뉴 고르기");
 			System.out.println("메뉴를 골라주세요");
 			
 			outputStream = socket.getOutputStream();
-			System.out.println(outputStream);
 			outputStreamWriter = new OutputStreamWriter(outputStream);
 			bufferedWriter = new BufferedWriter(outputStreamWriter);
 			
@@ -51,17 +50,27 @@ public class Client2 {
 			while(true) {
 				System.out.println("1. 점심메뉴 2. 저녁메뉴 3. 종료");
 				String msg = sc.next();
-				if(msg.equals("3")) {
-					System.out.println("프로그램을 종료합니다");
-					break;
-				}
 				
 				bufferedWriter.write(msg+"\r\n");
 				bufferedWriter.flush();
+	
+				if(msg.equals("1")) {
+					msg = bufferedReader.readLine();
+					System.out.println("점심메뉴 : " + msg);	
+				}
+				else if(msg.equals("2")) {
+					msg = bufferedReader.readLine();
+					System.out.println("저녁메뉴 : " + msg);
+				}
+				else if(msg.equals("3")) {
+					System.out.println("프로그램을 종료합니다");
+					break;
+				}
+				else {
+					System.out.println("잘못된 접근입니다.");
+				}
+			
 				
-				msg = bufferedReader.readLine();
-				String desc = bufferedReader.readLine();
-				System.out.println(desc + "메뉴 : " + msg);
 				
 				
 				

@@ -9,6 +9,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Calendar;
 import java.util.Random;
 
 public class Server2 {
@@ -47,35 +48,44 @@ public class Server2 {
 			
 			String [] lunch = {"짜장면", "일본라멘", "김치찌개", "마라탕", "국밥", "초밥"};
 			String [] dinner = {"삼겹살", "양꼬치", "파스타", "인도커리", "곱창전골", "닭도리탕"};
+			boolean check = true;
 			
 			while(true) {
 				String msg = bufferedReader.readLine();
-				if(msg == null) {
-					break;
-				}
+				
+				
+				int select = Integer.parseInt(msg);
+			
+				
 				String desc = "";
-				Random random = new Random();
+				Calendar c = Calendar.getInstance();
+				
+				Random random = new Random(c.getTimeInMillis());
 				
 				
-				if(msg.equals("1")) {
+				if(select == 1) {
 					int ran = random.nextInt(lunch.length);
 					msg = lunch[ran];
 					desc = "점심";
 				}
-				else if(msg.equals("2")) {
+				else if(select == 2) {
 					int ran = random.nextInt(dinner.length);
 					msg = dinner[ran];
 					desc = "저녁";
 				}
 				
 				else {
+					System.out.println("서버 프로그램 종료");
+					check = false;
 					break;
 				}
 				
-				bufferedWriter.write(msg + "\r\n");
-				bufferedWriter.flush();
-				bufferedWriter.write(desc + "\r\n");
-				bufferedWriter.flush();
+				if(check) {
+					bufferedWriter.write(msg + "\r\n");
+					bufferedWriter.flush();	
+				}
+				
+				
 				
 				
 			}

@@ -17,15 +17,17 @@ public class ExceptionSample1 {
 		//2자리
 		int num1 = 65;
 		int num2 = 48;
+		
+		//3자리
 //		int sum = num1 + num2;
 		
 		int sum = num2-num1;
 		if(sum<0) {
-			throw new CustomException("음수는 몰랑");
+			throw new CustomException("음수는 모릅니다");
 		}
 		
 		if(sum>99) {
-				throw new CustomException("세자리 몰랑");
+				throw new CustomException("세자리 숫자는 모릅니다");
 		}
 		
 
