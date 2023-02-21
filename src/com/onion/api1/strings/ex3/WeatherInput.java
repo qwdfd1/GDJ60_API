@@ -1,10 +1,13 @@
 package com.onion.api1.strings.ex3;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WeatherInput {
 	
 	Scanner sc;
+	
+	ArrayList<E>
 	
 	public WeatherInput() {
 		sc = new Scanner(System.in);
